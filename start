@@ -1,0 +1,54 @@
+mkdir install
+chrome
+atom
+sudo apt install screen
+sudo apt install tmux
+sudo apt install htop
+sudo apt install zsh
+(switch default terminal to zsh)
+sudo apt install g++
+sudo apt install lcov
+ZSH config: theme, aliases, etc
+
+sudo apt-get install git
+sudo apt-get install libmagickcore-dev
+sudo apt-get install libusb-1.0.0-dev libnss3-dev libglib2.0-dev
+sudo apt-get install libtool
+sudo apt-get install fprintd
+sudo apt-get install automake
+sudo apt full-upgrade
+vim
+curl -O https://prerelease.keybase.io/keybase_amd64.deb
+sudo dpkg -i keybase_amd64.deb
+sudo apt-get install -f
+run_keybase
+sudo apt install python-pip
+sudo apt install python-pip3
+pip install setuptools
+apm install atom-clock
+apm install file-icons
+apm install linter
+apm install git_plus
+(discord)
+sudo apt install cmake
+(exa?)
+git config --global push.default matching
+git config --global user.name "solsane"
+git config --global user.email "solsane@gmail.com"
+//setup synaptics
+chsh -s $(which zsh)
+
+sudo apt install npm
+sudo apt install doxygen
+sudo add-apt-repository ppa:inkscape.dev/stable
+sudo apt-get update
+sudo apt install inkscape
+
+(remmina)
+(inkscape)
+sudo apt install sl
+sudo apt install cmatrix
+arduino ide
+apm install term2
+(gitkraken)
+apm install docblok

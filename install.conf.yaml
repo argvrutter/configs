@@ -1,0 +1,17 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+
+    # Antigen
+    ~/.antigen:
+      force: true
+      path: antigen
+
+     # Zsh
+    ~/.zshrc:
+      force: true
+      path: dotfiles/zshrc

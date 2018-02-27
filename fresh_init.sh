@@ -1,5 +1,5 @@
 #!/bin/bash
-if[$1 == "su"]; 
+if [ "$EUID" -ne 0 ] 
     mkdir $HOME/install
     cd $HOME/install
 
@@ -21,7 +21,7 @@ if[$1 == "su"];
     wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
     dpkg -i gitkraken-amd64.deb
     pip install setuptools
-    
+
     wget -O discord.deb "https://discordapp.com/api/download?platform=linux&format=deb"
     dpkg -i /path/to/discord.deb
 fi

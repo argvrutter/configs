@@ -12,8 +12,8 @@ antigen bundle z
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle peterhurford/git-it-on.zsh
-alias make=m
-alias cmake=cmake
+alias m=make
+alias cm=cmake
 alias v=vim
 # Load the theme.
 antigen theme agnoster

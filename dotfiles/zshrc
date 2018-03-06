@@ -1,3 +1,6 @@
+#backlight sleeping issue fix, sleeps after 15 mins
+xset dpms 0 0 900
+
 source $HOME/.antigen/antigen.zsh
 antigen use oh-my-zsh
 

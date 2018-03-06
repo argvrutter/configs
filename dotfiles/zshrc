@@ -9,6 +9,7 @@ antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
 antigen bundle z
+antigen bundle arzzen/calc.plugin.zsh
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle peterhurford/git-it-on.zsh

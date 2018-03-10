@@ -11,7 +11,30 @@
       force: true
       path: antigen
 
-     # Zsh
+    # Zsh
     ~/.zshrc:
       force: true
-      path: dotfiles/zshrc
+      path: zsh/zshrc
+
+    # Tmux
+        #~/.tmux.conf: tmux/tmux.conf
+        #~/.config/tmux:
+        # create: true
+        # path: tmux
+
+    # Vim
+    ~/.config/vim/.vimrc:
+      create: true
+      path: vim/.vimrc
+
+- linkif:
+
+  # Conky
+    #~/.conky:
+     # if: conky --version
+      #create: false
+      #path: conky
+      #force: true
+
+- shell:
+  - [git submodule update --init, Initializing submodules]

@@ -17,6 +17,9 @@ antigen bundle peterhurford/git-it-on.zsh
 alias m=make
 alias cm=cmake
 alias v=vim
+alias a=atom
+
+alias hugo=ssh aiden@blu.blu.utk.edu
 # Load the theme.
 antigen theme agnoster
 #POWERLEVEL9K_MODE='nerdfont-complete'

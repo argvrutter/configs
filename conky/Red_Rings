@@ -39,11 +39,11 @@ border_width 1
 default_color 000000
 default_shade_color 000000
 default_outline_color 000000
-minimum_size 600 600
-maximum_width 400
-gap_x 0
-gap_y -100
-alignment bottom_left
+minimum_size 600 300
+maximum_width 500
+gap_x -120
+gap_y 0
+alignment top_right
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
@@ -56,20 +56,11 @@ default_color CACCCB
 color1 CACCCB
 color2 white
 color3 e84c3d
-color4 3d3d3d
-
-lua_load altrings-v1.2.1.lua
-lua_draw_hook_pre ring_stats
 
 own_window_argb_value 0
 own_window_colour 000000
 TEXT
-
-${goto 230}${voffset 420}${font ITC Avant Garde Gothic Pro:bold:size=10}  ${color2}${cpu cpu4}
-${goto 240}${voffset -3}${font ITC Avant Garde Gothic Pro:bold:size=10}    ${color2}${cpu cpu3}
-${goto 265}${voffset -3}${font ITC Avant Garde Gothic Pro:bold:size=10}   ${color2}${cpu cpu2}
-${goto 280}${voffset -3}${font ITC Avant Garde Gothic Pro:bold:size=10}    ${color2}${cpu cpu1}
-${goto 230}${voffset -10}${font ITC Avant Garde Gothic Pro:bold:size=18}CPU${color2}
-
-
-#${goto 250}Mem${color2} $memperc%${color1}${font ITC Avant Garde Gothic Pro:size=8}
+${goto 35}${font ITC Avant Garde Gothic Pro:size=90} ${time %H}${color3}${time %M}${color1}
+${goto 175}${voffset -80}${font ITC Avant Garde Gothic Pro:size=15} ${time %A}
+${goto 185}${voffset }${font ITC Avant Garde Gothic Pro:bold:size=25} ${time %b}
+${goto 265}${voffset -50}${color3}${font ITC Avant Garde Gothic Pro::size=35}${time %d}${color2}

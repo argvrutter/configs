@@ -1,0 +1,60 @@
+# By Jose75c, updated and modified by solsane visit https://jose75c.deviantart.com for more eyecandy
+conky.config = {
+    background = true,
+    use_xft = true,
+    xftfont = 'ITC Avant Garde Gothic Pro:size=9',
+    xftalpha = 0.8,
+    update_interval = 1,
+    total_run_times =0,
+    own_window = true,
+    own_window_transparent = true,
+    own_window_type = 'dock',
+    own_window_argb_visual = false,
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    double_buffer = true,
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+    draw_graph_borders = false,
+    stippled_borders = 0,
+    border_inner_margin = 5,
+    border_outer_margin = 5,
+    border_width = 1,
+    default_color = '#000000',
+    default_shade_color = '#000000',
+    -- default_outline_color '#000000',
+    minimum_width = 600,
+    minimum_height = 600,
+    maximum_width = 400,
+    gap_x = 0,
+    gap_y = -100,
+    alignment = 'bottom_left',
+    no_buffers = true,
+    uppercase = false,
+    cpu_avg_samples = 2,
+    net_avg_samples = 2,
+    short_units = true,
+    text_buffer_size = 2048,
+    use_spacer = 'none',
+    override_utf8_locale = true,
+    default_color = '#CACCCB',
+    color1 = '#CACCCB',
+    color2 = 'white',
+    color3 = '#e84c3d',
+    color4 = '#3d3d3d',
+
+    own_window_argb_value = 0,
+    own_window_colour = '#000000',
+
+    -- LOAD LUA DRAWING SCRIPT
+    lua_load = '~/configs/conky/altrings-v1.2.1.lua',
+    lua_draw_hook_pre = 'ring_stats',
+};
+
+conky.text = [[
+${goto 230}${voffset 420}${font ITC Avant Garde Gothic Pro:bold:size=10}  ${color2}${cpu cpu4}#
+${goto 240}${voffset -3}${font ITC Avant Garde Gothic Pro:bold:size=10}    ${color2}${cpu cpu3}#
+${goto 265}${voffset -3}${font ITC Avant Garde Gothic Pro:bold:size=10}   ${color2}${cpu cpu2}#
+${goto 280}${voffset -3}${font ITC Avant Garde Gothic Pro:bold:size=10}    ${color2}${cpu cpu1}#
+${goto 230}${voffset -10}${font ITC Avant Garde Gothic Pro:bold:size=18}CPU${color2}#
+]];

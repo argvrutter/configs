@@ -23,6 +23,7 @@ own_window_transparent yes
 #own_window_argb_visual yes
 
 ## cairo-compmgr
+
 own_window_type dock
 own_window_argb_visual no
 ##############################################
@@ -33,17 +34,18 @@ draw_outline no
 draw_borders no
 draw_graph_borders no
 stippled_borders 0
+
 border_inner_margin 5
 border_outer_margin 5
 border_width 1
 default_color 000000
 default_shade_color 000000
 default_outline_color 000000
-minimum_size 600 300
-maximum_width 500
-gap_x -120
-gap_y 0
-alignment top_right
+minimum_size 600 600
+maximum_width 400
+gap_x 0
+gap_y -100
+alignment bottom_left
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
@@ -56,22 +58,7 @@ default_color CACCCB
 color1 CACCCB
 color2 white
 color3 e84c3d
+color4 3d3d3d
 
-#lua_load rings-v1.2.1.lua
-#lua_draw_hook_pre ring_stats
-
-own_window_argb_value 0
-own_window_colour 000000
-TEXT
-${goto 35}${font ITC Avant Garde Gothic Pro:size=90} ${time %H}${color3}${time %M}${color1}
-${goto 175}${voffset -80}${font ITC Avant Garde Gothic Pro:size=15} ${time %A}
-${goto 185}${voffset }${font ITC Avant Garde Gothic Pro:bold:size=25} ${time %b}
-${goto 265}${voffset -50}${color3}${font ITC Avant Garde Gothic Pro::size=35}${time %d}${color2}
-
-#${goto 345}${voffset -175}${font ITC Avant Garde Gothic Pro:size=13}Cpu${color2} ${cpu cpu0}%${color1}
-
-#${goto 340}${voffset 50}Mem${color2} $memperc%${color1}${font ITC Avant Garde Gothic Pro:size=14}
-
-#${goto 350}${voffset 54}${color1}NET:${font ITC Avant Garde Gothic Pro:size=10}${color2}${upspeed enp8s0}${color1}
-
-#${goto 360}${voffset -10}${color2}${downspeed enp8s0}
+lua_load battery_draw.lua
+lua_draw_hook_pre batt_stats

@@ -27,14 +27,9 @@
       create: true
       path: vim/.vimrc
 
-- linkif:
-
-  # Conky
-    #~/.conky:
-     # if: conky --version
-      #create: false
-      #path: conky
-      #force: true
+    ~/.conky:
+      path: conky
+      force: true
 
 - shell:
   - [git submodule update --init, Initializing submodules]

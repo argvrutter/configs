@@ -11,7 +11,7 @@
     apt update
     sudo apt full-upgrade
     #install apt packages
-    apt install screen fonts-powerline tmux vim htop chromium-browser zsh g++ lcov git libmagickcore-dev libusb-1.0.0-dev libnss3-dev libglib2.0-dev libtool fprintd automake docker.io python python3 python-pip python-pip3 npm doxygen inkscape sl cmatrix term2
+    apt install screen fonts-powerline tmux vim htop chromium-browser zsh g++ lcov git libmagickcore-dev libusb-1.0.0-dev libnss3-dev libglib2.0-dev libtool fprintd automake docker.io python python3 python-pip python-pip3 npm doxygen inkscape sl cmatrix term2 ulauncher
     #update
     apt update
     #non apt packages

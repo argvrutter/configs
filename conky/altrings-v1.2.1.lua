@@ -15,7 +15,7 @@ Changelog:
 + v1.1 -- Added options for the starting angle of the rings, and added the "max" variable, to allow for variables that output a numerical value rather than a percentage (29.09.2009)
 + v1.0 -- Original release (28.09.2009)
 ]]
-
+-- TODO: add graduated panel
 settings_table = {
 
     {

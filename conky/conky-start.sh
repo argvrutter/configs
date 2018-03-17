@@ -1,5 +1,5 @@
 #!/bin/bash
 sleep 10
-conky -b -c ~/configs/conky/battery &
-conky -b -c ~/configs/conky/radial_graphs &
-conky -b -c ~/configs/conky/Red_Rings &
+conky -b -c ~/.conky/battery &
+conky -b -c ~/.conky/radial_graphs &
+conky -b -c ~/.conky/date_time &

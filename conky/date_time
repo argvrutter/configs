@@ -30,16 +30,16 @@ own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
 draw_shades no
 draw_outline no
-draw_borders no
+draw_borders yes
 draw_graph_borders no
 stippled_borders 0
-border_inner_margin 5
-border_outer_margin 5
-border_width 1
+border_inner_margin 0
+border_outer_margin 0
+border_width 0
 default_color 000000
 default_shade_color 000000
 default_outline_color 000000
-minimum_size 600 300
+minimum_size 600 100
 maximum_width 500
 gap_x -120
 gap_y 0

@@ -25,4 +25,8 @@ alias hugo='ssh aiden@blu.blu.utk.edu'
 antigen theme agnoster
 #POWERLEVEL9K_MODE='nerdfont-complete'
 # done.
+#
+cprp () {
+    rsync -br --info=progress2 "$@"
+}
 antigen apply

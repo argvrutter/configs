@@ -1,9 +1,9 @@
 conky.config = {
-    background = false,
+    background = true,
     -- use_xft = true,
     -- xftfont = 'ITC Avant Garde Gothic Pro:size=9',
     -- xftalpha = 0.8,
-    update_interval = 1,
+    update_interval = 5,
     total_run_times =0,
     own_window = true,
     own_window_transparent = true,

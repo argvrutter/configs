@@ -1,3 +1,16 @@
+### VTE Setup (nonlogin shell problem)
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+  # on Ubuntu it's in vte-2.91.sh sometimes for whatever reason?
+  if [[ -s '/etc/profile.d/vte.sh' ]]; then
+    Z_VTE_CONF_SETUP_FILE='/etc/profile.d/vte.sh'
+  elif [[ -s '/etc/profile.d/vte-2.91.sh' ]]; then
+    Z_VTE_CONF_SETUP_FILE='/etc/profile.d/vte-2.91.sh'
+  fi
+
+  if [[ -n "$Z_VTE_CONF_SETUP_FILE" ]]; then
+    source $Z_VTE_CONF_SETUP_FILE
+  fi
+fi
 
 source $HOME/.antigen/antigen.zsh
 antigen use oh-my-zsh

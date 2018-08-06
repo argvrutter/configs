@@ -1,5 +1,5 @@
 # By Jose75c visit https://jose75c.deviantart.com for more eyecandy
-background yes
+background no
 use_xft yes
 xftfont ITC Avant Garde Gothic Pro:size=9
 xftalpha 0.8
@@ -39,15 +39,13 @@ border_width 0
 default_color 000000
 default_shade_color 000000
 default_outline_color 000000
-minimum_size 600 100
+minimum_size 500 100
 maximum_width 500
 gap_x -120
 gap_y 0
 alignment top_right
 no_buffers yes
 uppercase no
-cpu_avg_samples 2
-net_avg_samples 2
 short_units yes
 text_buffer_size 2048
 use_spacer none

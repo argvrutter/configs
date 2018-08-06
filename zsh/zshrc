@@ -18,6 +18,7 @@ antigen bundle colored-man-pages
 alias m=make
 alias cm=cmake
 alias v=vim
+alias py=python
 alias a=atom
 alias n=nautilus
 alias hugo='ssh aiden@blu.blu.utk.edu'

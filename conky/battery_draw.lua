@@ -11,7 +11,7 @@ settings_table = {
         fg_colour=0x00FF00,
         fg_alpha=0.8,
         fg_crit = 0xe84c3d,
-        x=223, y=277,
+        x=223, y=117,
         width = 90,
         height = 330,
         angle = PI/2,
@@ -28,7 +28,7 @@ settings_table = {
         fg_colour=0xffffff,
         fg_crit = 0xe84c3d,
         fg_alpha=0.8,
-        x=120, y=187,
+        x=120, y=117,
         width = 90, height = 150,
         angle = PI/2,
         padding = 5,
@@ -51,7 +51,24 @@ function draw_rect(cr, pct, pt)
     cairo_translate(cr, - w / 2.0, - h / 2.0)
     cairo_set_source_rgba(cr,rgb_to_r_g_b(bgc,bga))
     local panel_y = (height-padding*(panes-1))/panes
-    local panel_y_mid = yc - height/2 + panel_y/2
+    -- adds back unused space from final bar
+    panel_y = panel_y + (panel_y * 2 / 3)/panes
+    -- local panel_y_mid = yc - height/2 + panel_y/2
+	  local panel_y_mid = yc + padding
+    -- Draw boundary rectange
+    -- cairo_rectangle(cr, xc-padding , yc, width+2*padding, height+2*padding)
+    cairo_move_to(cr, xc-padding, yc);
+    cairo_rel_line_to(cr, width+2*padding, 0);
+    cairo_rel_line_to(cr, 0, height+2*padding - (panel_y - 1.5*padding));
+    cairo_rel_line_to(cr, -1*(width/3 -1.5*padding), 0);
+    cairo_rel_line_to(cr, 0, panel_y/3 + padding);
+    cairo_rel_line_to(cr, -1*(width/2) - 2*padding, 0);
+    cairo_rel_line_to(cr, 0, -panel_y/3 - padding);
+    cairo_rel_line_to(cr, -1*(width/3 -1.5*padding), 0);
+
+    -- cairo_rel_line_to(cr, -1*(width+2*padding), 0);
+    cairo_close_path(cr);
+    cairo_stroke(cr)
 
     for i=1, panes, 1
     do

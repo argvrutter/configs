@@ -36,11 +36,23 @@ alias a=atom
 alias n=nautilus
 alias hugo='ssh aiden@blu.blu.utk.edu'
 # Load the theme.
-antigen theme agnoster
+antigen bundle https://gitlab.com/robobenklein/p10k
 #POWERLEVEL9K_MODE='nerdfont-complete'
 # done.
 #
-cprp () {
-    rsync -br --info=progress2 "$@"
-}
 antigen apply
+
+if [[ ${precmd_functions[(r)_z_precmd]} == "_z_precmd" ]]; then
+  # move the _z_precmd to the prexec, so it only adds with commands executed,
+  # not with prompts drawn
+  precmd_functions=(${precmd_functions%_z_precmd})
+  preexec_functions+=(_z_precmd)
+fi
+
+# cprp fancy cp
+if (( ${+commands[rsync]} )); then
+  function cprp () {
+    rsync -r --info=progress2 --delay-updates --partial-dir=.rsync-partial "$@"
+  }
+  compdef _rsync cprp
+fi

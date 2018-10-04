@@ -55,6 +55,7 @@ function draw_rect(cr, pct, pt)
     panel_y = panel_y + (panel_y * 2 / 3)/panes
     -- local panel_y_mid = yc - height/2 + panel_y/2
 	  local panel_y_mid = yc + padding
+    local num_panes = 0
     -- Draw boundary rectange
     -- cairo_rectangle(cr, xc-padding , yc, width+2*padding, height+2*padding)
     cairo_move_to(cr, xc-padding, yc);
@@ -78,6 +79,7 @@ function draw_rect(cr, pct, pt)
             cairo_rectangle(cr, xc, panel_y_mid, width, panel_y)
             cairo_fill(cr)
             panel_y_mid = panel_y_mid + padding + panel_y
+            num_panes = num_panes + 1
         else
         --if a pane is not full
             if(i == 1 and pct < .20)
@@ -89,6 +91,7 @@ function draw_rect(cr, pct, pt)
                 cairo_rectangle(cr, xc+width/4, panel_y_mid, width/2, panel_y/3)
                 cairo_fill(cr)
                 break
+            --[[
             else --does not work
                 -- + padding + 1/2(smaller panel width)
                 local partial_panel_y = panel_y*(panes*pct - (i-1))
@@ -97,11 +100,11 @@ function draw_rect(cr, pct, pt)
                     panel_y_mid = partial_panel_y / 2 - height/2 + yc + padding
 
                 else
-                    panel_y_mid = panel_y_mid - panel_y/2 + partial_panel_y/2 + padding/2
+                    panel_y_mid = panel_y_mid - panel_y/2 + partial_panel_y/2 + padding
                 end
                 cairo_rectangle(cr, xc, panel_y_mid, width, partial_panel_y)
                 cairo_fill(cr)
-                break
+                break]]--
             end
         end
     end

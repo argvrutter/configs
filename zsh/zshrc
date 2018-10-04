@@ -35,12 +35,19 @@ alias py=python
 alias a=atom
 alias n=nautilus
 alias hugo='ssh aiden@blu.blu.utk.edu'
+alias hydra='ssh arutter1@hydra24.eecs.utk.edu'
 # Load the theme.
 antigen bundle https://gitlab.com/robobenklein/p10k
 #POWERLEVEL9K_MODE='nerdfont-complete'
 # done.
 #
 antigen apply
+autoload -Uz promptinit
+p10k_opts=(
+  p10ks_cwd ';;;;rtab;-t;-l'
+)
+promptinit
+prompt p10k
 
 if [[ ${precmd_functions[(r)_z_precmd]} == "_z_precmd" ]]; then
   # move the _z_precmd to the prexec, so it only adds with commands executed,
@@ -56,3 +63,4 @@ if (( ${+commands[rsync]} )); then
   }
   compdef _rsync cprp
 fi
+export PATH="/home/solsane/miniconda3/bin:$PATH"

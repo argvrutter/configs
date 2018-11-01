@@ -18,6 +18,7 @@ antigen use oh-my-zsh
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
 antigen bundle zsh-users/zsh-completions
+# antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle heroku
 antigen bundle pip
 antigen bundle lein
@@ -34,6 +35,7 @@ alias v=vim
 alias py=python
 alias a=atom
 alias n=nautilus
+#TODO: Context specific aliases
 alias hugo='ssh aiden@blu.blu.utk.edu'
 alias hydra='ssh arutter1@hydra24.eecs.utk.edu'
 # Load the theme.
@@ -42,6 +44,9 @@ antigen bundle https://gitlab.com/robobenklein/p10k
 # done.
 #
 antigen apply
+# External plugins
+# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 autoload -Uz promptinit
 p10k_opts=(
   p10ks_cwd ';;;;rtab;-t;-l'
@@ -63,4 +68,12 @@ if (( ${+commands[rsync]} )); then
   }
   compdef _rsync cprp
 fi
-export PATH="/home/solsane/miniconda3/bin:$PATH"
+# export PATH="/home/solsane/miniconda3/bin:$PATH"
+export PATH="/bin:/usr/bin:/usr/local/bin:$PATH"
+# export PATH="/usr/bin/python3/bin:$PATH"
+# autoload -U up-line-or-beginning-search
+# autoload -U down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search
+bindkey "^[[B" down-line-or-beginning-search
+bindkey '\e[H' beginning-of-line
+bindkey '\e[F' end-of-line

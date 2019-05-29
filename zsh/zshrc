@@ -39,7 +39,7 @@ alias n=nautilus
 alias hugo='ssh aiden@blu.blu.utk.edu'
 alias hydra='ssh arutter1@hydra24.eecs.utk.edu'
 # Load the theme.
-antigen bundle https://gitlab.com/robobenklein/p10k
+antigen bundle https://gitlab.com/robobenklein/zinc
 #POWERLEVEL9K_MODE='nerdfont-complete'
 # done.
 #
@@ -47,12 +47,10 @@ antigen apply
 # External plugins
 # source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-autoload -Uz promptinit
-p10k_opts=(
-  p10ks_cwd ';;;;rtab;-t;-l'
+zinc_opts=(
+  zincs_cwd ';;;;rtab;-t;-l'
 )
-promptinit
-prompt p10k
+prompt_zinc_setup
 
 if [[ ${precmd_functions[(r)_z_precmd]} == "_z_precmd" ]]; then
   # move the _z_precmd to the prexec, so it only adds with commands executed,

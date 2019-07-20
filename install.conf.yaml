@@ -25,7 +25,7 @@
     # Vim
     ~/.config/vim/.vimrc:
       create: true
-      path: vim/.vimrc
+      path: vim/vimrc
 
     ~/.conky:
       path: conky

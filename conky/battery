@@ -10,8 +10,8 @@ conky.config = {
     own_window_type = 'dock',
     own_window_argb_visual = false,
     own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
-    double_buffer = true,
-    draw_shades = false,
+    double_buffer = false,
+    draw_shades = true,
     draw_outline = false,
     draw_borders = false,
     draw_graph_borders = false,
@@ -39,7 +39,10 @@ conky.config = {
     color2 = 'white',
     color3 = '#e84c3d',
     color4 = '#3d3d3d',
-
+    own_window_transparent=true,
+    own_window_type=conky,
+    own_window_argb_visual=true,
+    own_window_class=override,
     own_window_argb_value = 0,
     own_window_colour = '#000000',
 

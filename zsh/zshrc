@@ -37,9 +37,9 @@ alias a=atom
 alias n=nautilus
 #TODO: Context specific aliases
 alias hugo='ssh aiden@blu.blu.utk.edu'
-alias hydra='ssh arutter1@hydra24.eecs.utk.edu'
+alias hydra='ssh arutter1@hydra2.eecs.utk.edu'
 # Load the theme.
-antigen bundle https://gitlab.com/robobenklein/p10k
+antigen bundle robobenklein/zinc
 #POWERLEVEL9K_MODE='nerdfont-complete'
 # done.
 #
@@ -52,7 +52,7 @@ p10k_opts=(
   p10ks_cwd ';;;;rtab;-t;-l'
 )
 promptinit
-prompt p10k
+# prompt p10k
 
 if [[ ${precmd_functions[(r)_z_precmd]} == "_z_precmd" ]]; then
   # move the _z_precmd to the prexec, so it only adds with commands executed,
@@ -77,3 +77,7 @@ bindkey "^[[A" up-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
 bindkey '\e[H' beginning-of-line
 bindkey '\e[F' end-of-line
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

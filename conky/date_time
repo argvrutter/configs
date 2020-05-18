@@ -61,7 +61,7 @@ own_window_argb_visual yes
 own_window_class override
 
 TEXT
-${goto 35}${font ITC Avant Garde Gothic Pro:size=90} ${time %H}${color3}${time %M}${color1}
-${goto 175}${voffset -80}${font ITC Avant Garde Gothic Pro:size=15} ${time %A}
-${goto 185}${voffset }${font ITC Avant Garde Gothic Pro:bold:size=25} ${time %b}
-${goto 265}${voffset -50}${color3}${font ITC Avant Garde Gothic Pro::size=35}${time %d}${color2}
+${goto 35}${offset 100}${font ITC Avant Garde Gothic Pro:size=90} ${time %H}${color3}${time %M}${color1}
+${goto 175}${offset 100}${voffset -80}${font ITC Avant Garde Gothic Pro:size=15} ${time %A}
+${goto 185}${offset 100}${voffset }${font ITC Avant Garde Gothic Pro:bold:size=25} ${time %b}
+${goto 265}${offset 100}${voffset -50}${color3}${font ITC Avant Garde Gothic Pro::size=35}${time %d}${color2}

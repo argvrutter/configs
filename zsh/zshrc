@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 ### VTE Setup (nonlogin shell problem)
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
   # on Ubuntu it's in vte-2.91.sh sometimes for whatever reason?
@@ -40,25 +47,25 @@ alias hugo='ssh aiden@blu.blu.utk.edu'
 alias hydra='ssh arutter1@hydra24.eecs.utk.edu'
 alias venv='python3 -m venv'
 # Load the theme.
-antigen bundle robobenklein/zinc
+# antigen bundle robobenklein/zinc
 #POWERLEVEL9K_MODE='nerdfont-complete'
 # done.
 #
-antigen apply
+# antigen apply
 # External plugins
 # source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 zinc_opts=(
   zincs_cwd ';;;;rtab;-t;-l'
 )
-prompt_zinc_setup
+# prompt_zinc_setup
 
-if [[ ${precmd_functions[(r)_z_precmd]} == "_z_precmd" ]]; then
-  # move the _z_precmd to the prexec, so it only adds with commands executed,
-  # not with prompts drawn
-  precmd_functions=(${precmd_functions%_z_precmd})
-  preexec_functions+=(_z_precmd)
-fi
+# if [[ ${precmd_functions[(r)_z_precmd]} == "_z_precmd" ]]; then
+#   # move the _z_precmd to the prexec, so it only adds with commands executed,
+#   # not with prompts drawn
+#   precmd_functions=(${precmd_functions%_z_precmd})
+#   preexec_functions+=(_z_precmd)
+# fi
 
 # cprp fancy cp
 if (( ${+commands[rsync]} )); then
@@ -97,3 +104,11 @@ unset __conda_setup
 # <<< conda initialize <<<
 # app switching only does current workspace
 gsettings set org.gnome.shell.app-switcher current-workspace-only true
+
+# Docker installation
+# https://docs.docker.com/engine/install/ubuntu/
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+antigen theme romkatv/powerlevel10k
+antigen apply

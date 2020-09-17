@@ -95,3 +95,5 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+# app switching only does current workspace
+gsettings set org.gnome.shell.app-switcher current-workspace-only true

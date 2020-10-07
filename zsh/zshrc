@@ -74,6 +74,15 @@ if (( ${+commands[rsync]} )); then
   }
   compdef _rsync cprp
 fi
+function gitignore() {
+    ROOT = $(git rev-parse --show-toplevel)
+    if [$?==0]; then
+        echo -e $@ >> ROOT/.gitignore
+    else 
+        return $?
+    fi
+    return 0;
+}
 # export PATH="/home/solsane/miniconda3/bin:$PATH"
 export PATH="/bin:/usr/bin:/usr/local/bin:$PATH"
 # export PATH="/usr/bin/python3/bin:$PATH"
@@ -102,6 +111,7 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+source scripts.zsh
 # app switching only does current workspace
 # gsettings set org.gnome.shell.app-switcher current-workspace-only true
 

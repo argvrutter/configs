@@ -68,12 +68,15 @@ alias venv='python3 -m venv'
 # fi
 
 # cprp fancy cp
-if (( ${+commands[rsync]} )); then
-  function cprp () {
-    rsync -r --info=progress2 --delay-updates --partial-dir=.rsync-partial "$@"
-  }
-  compdef _rsync cprp
-fi
+case 'uname' in
+  Linux)
+    if (( ${+commands[rsync]} )); then
+      function cprp () {
+        rsync -r --info=progress2 --delay-updates --partial-dir=.rsync-partial "$@"
+      }
+      compdef _rsync cprp
+    fi
+esac
 function gitignore() {
     ROOT = $(git rev-parse --show-toplevel)
     if [$?==0]; then
